@@ -1,0 +1,24 @@
+{
+  "skill_name": "avoid-ai-tells",
+  "description": "Trigger-accuracy eval set. should_trigger=true means the skill SHOULD fire; false means a near-miss that should NOT fire. Negatives are deliberately tricky (shared keywords, adjacent domains).",
+  "evals": [
+    { "id": 1, "should_trigger": true, "query": "can you write the README intro for my secrets-scanning CLI tool? it keeps coming out sounding like every other github project, all 'robust' and 'seamless'" },
+    { "id": 2, "should_trigger": true, "query": "rewrite this cover letter para so it doesn't read like ChatGPT wrote it" },
+    { "id": 3, "should_trigger": true, "query": "draft a LinkedIn post about passing my Security+ but make it sound like an actual human and not an inspirational AI post" },
+    { "id": 4, "should_trigger": true, "query": "de-slop my release notes before i publish them tonight" },
+    { "id": 5, "should_trigger": true, "query": "here's my blog post on CI/CD pipeline security, can you go through and humanise it, I think it sounds generic" },
+    { "id": 6, "should_trigger": true, "query": "write a 600 word article about why branch protection matters for solo devs" },
+    { "id": 7, "should_trigger": true, "query": "can you tighten up this product launch email, it's got too much hype and those em dashes everywhere" },
+    { "id": 8, "should_trigger": true, "query": "this onboarding doc reads like a textbook, every other word is bolded and it's all bullet points. fix it" },
+    { "id": 9, "should_trigger": true, "query": "i need a paragraph for my portfolio site about my pivot into appsec. nothing cringe please" },
+    { "id": 10, "should_trigger": true, "query": "check this whole blog draft for AI tells but don't strip the life out of it" },
+    { "id": 11, "should_trigger": false, "query": "is this email actually written by AI? i'm trying to figure out if a candidate used ChatGPT for their application" },
+    { "id": 12, "should_trigger": false, "query": "write a python function that detects em dashes and curly quotes in a text file and counts them" },
+    { "id": 13, "should_trigger": false, "query": "translate this paragraph from English into French" },
+    { "id": 14, "should_trigger": false, "query": "what are the main signs that text was written by an LLM? just curious, explain it to me" },
+    { "id": 15, "should_trigger": false, "query": "fix the grammar and spelling mistakes in this email, don't change anything else" },
+    { "id": 16, "should_trigger": false, "query": "summarise this 20 page PDF into 5 bullet points for my standup" },
+    { "id": 17, "should_trigger": false, "query": "review my terraform for security misconfigurations with tfsec" },
+    { "id": 18, "should_trigger": false, "query": "make this README into a proper table of contents with anchor links" }
+  ]
+}
