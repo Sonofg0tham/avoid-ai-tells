@@ -4,6 +4,8 @@ A Claude skill that makes written output read like a person wrote it, not a chat
 
 It works in Claude Code, Claude.ai Projects, and Cowork. Point it at any prose you're about to ship and it does a humanising pass. It also runs automatically on substantial writing, so your READMEs, release notes, and posts come out clean without you asking.
 
+> **Official source:** the only maintained copy of this skill lives at [github.com/Sonofg0tham/avoid-ai-tells](https://github.com/Sonofg0tham/avoid-ai-tells). A skill is instructions an AI agent follows, so a tampered fork is a genuine risk. Verify the checksum before installing. See [SECURITY.md](SECURITY.md).
+
 ## Why this exists
 
 LLMs have a house style. Once you've seen it you can't unsee it: every list is three items long, every other sentence is "it's not just X, it's Y", and everything is robust, seamless, and vibrant. Readers clock it instantly, and on a portfolio or a public repo it undercuts the work.
@@ -86,6 +88,16 @@ It calibrates to register. A formal report keeps more structure than a casual po
 The skill was put through an eval pass rather than shipped on vibes. Triggering was checked against 18 queries (10 should-fire, 8 tricky near-misses) and scored 18/18. Output was tested on real humanising tasks against a no-skill baseline, including an over-correction trap (already-good text it should leave alone). The skill left the good text untouched where the baseline made unforced edits.
 
 The behavioural tests were then re-run on both Sonnet 5 and Opus 4.8 before release. That round caught a real loophole: both models wrote plausible "standard for this kind of tool" claims into rewrites of products they knew nothing about. The guardrail now names that excuse directly, and both models pass. The full write-up and the changes the tests prompted are in [evals/RESULTS.md](evals/RESULTS.md).
+
+## Security and provenance
+
+A skill is instructions an AI agent reads and follows, sometimes with access to your files and shell, so a poisoned copy is a supply-chain risk worth taking seriously. You can't stop anyone forking an open-source repo, but you can make the real thing verifiable:
+
+- **Checksum.** Every release ships the `.skill` package with its SHA256 in the release notes. Check it matches before you install.
+- **Signed tags.** Release tags are signed, so a genuine release shows a "Verified" badge on GitHub. A fork can't reproduce that.
+- **One canonical source.** Anything not served from this repo is unverified.
+
+Full detail, and how to report a vulnerability privately, is in [SECURITY.md](SECURITY.md).
 
 ## A note on the skill's own writing
 
